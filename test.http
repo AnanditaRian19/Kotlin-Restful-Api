@@ -1,0 +1,92 @@
+### Create Product
+POST http://localhost:8080/api/products
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "A0011",
+  "name" : "Lenovo Legion",
+  "price" : 26000000,
+  "quantity" : 13
+}
+
+### Create Product Invalid
+POST http://localhost:8080/api/products
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "",
+  "name" : "",
+  "price" : 0,
+  "quantity" : -10
+}
+
+### Get Product
+GET http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Accept: application/json
+
+### Get Product NotFound
+GET http://localhost:8080/api/products/salah
+X-Api-Key: SECRET
+Accept: application/json
+
+### Update Product
+PUT http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Apple Mac Book Pro 15 2020",
+  "price" : 40000000,
+  "quantity" : 100
+}
+
+### Update Product Not Found
+PUT http://localhost:8080/api/products/salah
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Apple Mac Book Pro 15 2020",
+  "price" : 40000000,
+  "quantity" : 100
+}
+
+### Update Product With Invalid Body
+PUT http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "",
+  "price" : 0,
+  "quantity" : -10
+}
+
+### Delete Product
+DELETE http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Product
+GET http://localhost:8080/api/products
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Product With Size Parameter
+GET http://localhost:8080/api/products?size=5
+X-Api-Key: SECRET
+Accept: application/json
+
+### List Product With Size & Page Parameter
+GET http://localhost:8080/api/products?size=5&page=1
+X-Api-Key: SECRET
+Accept: application/json
+
